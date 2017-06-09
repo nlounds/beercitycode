@@ -17,3 +17,8 @@ def describe_index():
         response = client.get('/')
 
         expect(response.data).contains(b"Hello, world!")
+
+#    def it_not_says_goodbye(client):
+#        response = client.get('/')
+#
+#        expect(response.data).contains(b"Good-bye")
