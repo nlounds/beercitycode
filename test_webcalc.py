@@ -34,16 +34,15 @@ def describe_calc():
         def when_plus(client):
             response = client.get('/4/+/5')
 
-            expect(response.data).contains(b"9")
+            expect(response.data) == b"Result: 4 + 5 = 9"
 
 
         def from_db(client, pattern):
             response = client.get('/4/x/5')
-
-            expect(response.data).contains(b"20")
-
-
+            # expect(response.data).contains(b"20")
+            expect(response.data) == b"Result: 4 x 5 = 20"
+            
         def when_div(client):
             response = client.get('/40/d/10')
 
-            expect(response.data).contains(b"4")
+            expect(response.data) == b"Result: 40 d 10 = 4"

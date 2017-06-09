@@ -28,7 +28,7 @@ def calc(a, op, b):
     elif op == '+':
         return f"Result: {a} {op} {b} = {a + b}"
     else:
-        return f"Result: {a} {op} {b} = ???"
+        return f"Result: {a} {op} {b} = Unknown operation"
 
 if __name__ == '__main__':
     app.run(debug=True)
