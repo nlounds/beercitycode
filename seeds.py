@@ -16,3 +16,24 @@ with app.app_context():
             pattern="{{ a * b }}"
         )
     )
+
+    mongo.db.operations.insert(
+        dict(
+            name="d",
+            pattern="{{ a / b }}"
+        )
+    )
+
+    mongo.db.operations.insert(
+        dict(
+            name="-",
+            pattern="{{ a - b }}"
+        )
+    )
+
+    mongo.db.operations.insert(
+        dict(
+            name="*",
+            pattern="{{ a * b }}"
+        )
+    )

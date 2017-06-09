@@ -22,7 +22,9 @@ def index():
 def calc(a, op, b):
     operation = mongo.db.operations.find_one({'name': op})
     if operation:
-        return Template(operation['pattern']).render(a=a, b=b)
+        result = Template(operation['pattern']).render(a=a, b=b)
+        return f"Result: {a} {op} {b} = {result}"
+        # return Template(operation['pattern']).render(a=a, b=b)
     elif op == '+':
         return f"Result: {a} {op} {b} = {a + b}"
     else:

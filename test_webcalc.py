@@ -41,3 +41,9 @@ def describe_calc():
             response = client.get('/4/x/5')
 
             expect(response.data).contains(b"20")
+
+
+        def when_div(client):
+            response = client.get('/40/d/10')
+
+            expect(response.data).contains(b"4")
