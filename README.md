@@ -19,6 +19,6 @@ The application will perform math by executing the path as a math equation.
 ie. /4/+/5     => Returns 9
 
 ### Notes
-Creating the lock file kind of locks in the virutal environment, so it will always be consistent.
+Creating the lock file kind of locks in the virutal environment, so it will always be consistent.  It is an explicit definition of our dependencies.
 
 

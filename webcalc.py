@@ -1,3 +1,5 @@
+"""This module does math"""
+
 from flask import Flask
 
 
@@ -6,6 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    """This function says hello"""
     return "Hello, world!"
 
 
