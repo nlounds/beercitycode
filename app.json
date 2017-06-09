@@ -1,6 +1,7 @@
 {
   "name": "beercitycode",
   "scripts": {
+    "postdeploy": "python seeds.py"
   },
   "env": {
 
