@@ -25,3 +25,5 @@ When creating a pull request, go to the branch you've been working on to create 
 Set the base as the branch you want to merge your changes into.
 
 Request code review is a nice option in the Github UI.
+
+Create new branch -> Develop -> Push -> Pull Request -> Merge
