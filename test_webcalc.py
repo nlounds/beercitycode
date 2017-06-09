@@ -1,6 +1,7 @@
 """This module does tests"""
 
 import pytest
+import seeds
 from expecter import expect
 
 from webcalc import app, mongo
@@ -10,12 +11,7 @@ from webcalc import app, mongo
 def pattern():
     with app.app_context():
         mongo.db.operations.drop()
-        mongo.db.operations.insert(
-            dict(
-                name="x",
-                pattern="{{ a * b }}"
-            )
-        )
+        seeds.run()
 
 @pytest.fixture
 def client():
@@ -31,18 +27,22 @@ def describe_index():
 
 def describe_calc():
 
-        def when_plus(client):
+        def when_plus(client, pattern):
             response = client.get('/4/+/5')
 
             expect(response.data) == b"Result: 4 + 5 = 9"
 
-
-        def from_db(client, pattern):
+        def when_mult(client, pattern):
             response = client.get('/4/x/5')
             # expect(response.data).contains(b"20")
             expect(response.data) == b"Result: 4 x 5 = 20"
-            
-        def when_div(client):
+
+        def when_div(client, pattern):
             response = client.get('/40/d/10')
 
-            expect(response.data) == b"Result: 40 d 10 = 4"
+            expect(response.data) == b"Result: 40 d 10 = 4.0"
+
+        def when_unk(client, pattern):
+            response = client.get('/40/^/10')
+
+            expect(response.data) == b"Result: 40 ^ 10 = Unknown operation"
