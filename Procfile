@@ -1,1 +1,1 @@
-web: gunicorn webcalc.py
+web: gunicorn webcalc:app
