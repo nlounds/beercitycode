@@ -25,8 +25,8 @@ def calc(a, op, b):
         result = Template(operation['pattern']).render(a=a, b=b)
         return f"Result: {a} {op} {b} = {result}"
         # return Template(operation['pattern']).render(a=a, b=b)
-    elif op == '+':
-        return f"Result: {a} {op} {b} = {a + b}"
+    #elif op == '+':
+    #    return f"Result: {a} {op} {b} = {a + b}"
     else:
         return f"Result: {a} {op} {b} = Unknown operation"
 
